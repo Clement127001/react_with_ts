@@ -1,7 +1,7 @@
 class Todo
 {
     text:string;
-    id:String;
+    id:string;
 
     constructor(todoText:string)
     {
