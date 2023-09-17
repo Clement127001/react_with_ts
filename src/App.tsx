@@ -12,10 +12,17 @@ function App() {
     const newTodo=new Todo(todoText);
     setTodos(prevTodos=>prevTodos.concat(newTodo));
   }
+
+  const deleteTodoHandler=(todoId:string)=>
+  {
+    const updatedTodo=todos.filter(item=>item.id!==todoId);
+
+    setTodos(updatedTodo);
+  }
   return (
     <div >
       <NewTodo onAddTodo={onAddTodoHandler}/>
-      <Todos items={todos} />
+      <Todos items={todos} onDeleteTodo={deleteTodoHandler} />
     </div>
   );
 }
